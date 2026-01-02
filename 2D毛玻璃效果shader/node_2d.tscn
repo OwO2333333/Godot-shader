@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b57uywhgydn4"]
+
+[ext_resource type="Shader" uid="uid://ctn15a7yfljbw" path="res://2D毛玻璃效果shader/Frosted Glass Shader.gdshader" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://cxosvfdnf2066" path="res://2D毛玻璃效果shader/Screenshot 2025-12-27 173336.png" id="2_epypp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_epypp"]
+shader = ExtResource("1_wtcfe")
+shader_parameter/shape_type = 1
+shader_parameter/rect_size = Vector2(300, 200)
+shader_parameter/corner_radius_top_left = 20.0
+shader_parameter/corner_radius_top_right = 20.0
+shader_parameter/corner_radius_bottom_left = 20.0
+shader_parameter/corner_radius_bottom_right = 20.0
+shader_parameter/circle_radius = 100.0
+shader_parameter/outline_enabled = true
+shader_parameter/outline_width = 2.0
+shader_parameter/outline_color = Color(1, 1, 1, 0.8)
+shader_parameter/shadow_enabled = false
+shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
+shader_parameter/shadow_offset = Vector2(10, 10)
+shader_parameter/shadow_blur = 15.0
+shader_parameter/edge_softness = 1.0
+shader_parameter/shape_color = Color(0.3, 0.5, 0.9, 1)
+shader_parameter/color_gradient_y = 1.5
+shader_parameter/color_gradient_x = -0.8
+shader_parameter/color_multiplier = 0.9
+shader_parameter/enable_screen_blur = true
+shader_parameter/blur_amount = 1.0000000475
+shader_parameter/blur_samples = 4
+shader_parameter/glass_opacity = 0.0
+shader_parameter/node_size = Vector2(400, 400)
+
+[node name="Node2D" type="Node2D" unique_id=35180264]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=533415785]
+position = Vector2(1167, 725)
+texture = ExtResource("2_epypp")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1571521127]
+material = SubResource("ShaderMaterial_epypp")
+offset_left = 314.0
+offset_top = -76.0
+offset_right = 1342.0
+offset_bottom = 1010.0
+color = Color(1, 1, 1, 0)

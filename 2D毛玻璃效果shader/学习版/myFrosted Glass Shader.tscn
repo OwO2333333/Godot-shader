@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://yx2td4clk8dv"]
+
+[ext_resource type="Texture2D" uid="uid://cxosvfdnf2066" path="res://2D毛玻璃效果shader/Screenshot 2025-12-27 173336.png" id="1_a14rk"]
+[ext_resource type="Shader" uid="uid://dwbk1858ag1ed" path="res://2D毛玻璃效果shader/学习版/myFrosted Glass Shader.gdshader" id="2_505q5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_65205"]
+shader = ExtResource("2_505q5")
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/rect_size = Vector2(600, 400)
+shader_parameter/radius = 100.0
+shader_parameter/aa_range = 0.01
+shader_parameter/aa_method = 1
+shader_parameter/enable_screen_blur = true
+shader_parameter/blur_amount = 1.5
+shader_parameter/blur_samples = 4
+shader_parameter/glass_opacity = 0.2
+
+[node name="Node2D" type="Node2D" unique_id=874676133]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1477022380]
+position = Vector2(1167, 725)
+texture = ExtResource("1_a14rk")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=82935837]
+material = SubResource("ShaderMaterial_65205")
+offset_left = 560.0
+offset_top = 407.0
+offset_right = 1563.0
+offset_bottom = 1085.0
+color = Color(0, 1, 1, 1)
